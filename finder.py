@@ -1,10 +1,9 @@
 import pdfplumber
 import requests
+from config import snils
 
-snils = 'xxx-xxx-xxx xx' #укажите свой снилс
-path = '/home/...' #укажите рабочий путь (где будут лежать файлы для работы программы)
 
-print('выбери вуз: 1 - Макаровка \n2 - Лесотехнический(в разработке) \n...')
+print('выбери вуз, 1 - Макаровка, 2 - Лесотехнический...')
 x = int(input())
 if x == 1:
     vus = 'https://abitur.gumrf.ru/hod-priema'
@@ -33,6 +32,6 @@ elif x == 2:
 
     
 else:
-    print('дурак')
+    print('дебил, ты, дурак ')
 
 
