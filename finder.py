@@ -3,18 +3,18 @@ import requests
 from config import snils
 
 
-print('выбери вуз, 1 - Макаровка, 2 - Лесотехнический...')
+print('выбери вуз, 1 - Макаровка')
 x = int(input())
 if x == 1:
     vus = 'https://abitur.gumrf.ru/hod-priema'
-    with open(path + 'Front.html', 'w') as s:
+    with open('Front.html', 'w') as s:
         s.write(requests.get(vus).text)
-    with open(path + 'Front.html', 'rb') as s:
+    with open('Front.html', 'rb') as s:
         urlFile = s.readlines()[219][28:125]
-    with open(path + 'pdf.pdf', 'wb') as file:
+    with open('pdf.pdf', 'wb') as file:
         file.write(requests.get(urlFile).content)
 
-    with pdfplumber.open(path + 'pdf.pdf') as file:
+    with pdfplumber.open('pdf.pdf') as file:
         pages = file.pages
         for i in range(len(pages)):
             a = pages[i].extract_text()
@@ -32,6 +32,6 @@ elif x == 2:
 
     
 else:
-    print('дебил, ты, дурак ')
+    print('дурак')
 
 
